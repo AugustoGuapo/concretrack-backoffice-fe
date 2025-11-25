@@ -20,6 +20,7 @@ export default function Login({ onLogin }) {
             if (!res.ok) throw new Error("Credenciales inválidas");
             const data = await res.json();
             localStorage.setItem("user_id", data.id);
+            localStorage.setItem("user", JSON.stringify(data))
             onLogin();
         } catch (err) {
             setError(err.message);
