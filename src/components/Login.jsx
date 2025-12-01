@@ -2,6 +2,8 @@ import { useState } from "react";
 import image from "../assets/image.png"
 
 export default function Login({ onLogin }) {
+    const backendUrl = import.meta.env.VITE_BACKEND_URL;
+    console.log(backendUrl)
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -11,7 +13,7 @@ export default function Login({ onLogin }) {
         setError("");
 
         try {
-            const res = await fetch("http://localhost:8080/login", {
+            const res = await fetch(`${backendUrl}/login`, {
                 method: "POST",
                 headers: { "Content-type": "application/json" },
                 body: JSON.stringify({ username, password }),

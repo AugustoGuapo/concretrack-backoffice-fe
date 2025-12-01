@@ -10,6 +10,7 @@ export default function FamilyInputForm({ onBack }) {
     const [radius, setRadius] = useState("");
     const [height, setHeight] = useState("");
     const [classification, setClassification] = useState("");
+    const [designResistance, setDesignResistance] = useState(""); // NUEVO
 
     // Selectores
     const [clients, setClients] = useState([]);
@@ -99,6 +100,7 @@ export default function FamilyInputForm({ onBack }) {
                 radius: parseFloat(radius),
                 height: parseFloat(height),
                 classification: parseInt(classification),
+                design_resistance: parseFloat(designResistance), // NUEVO
                 client_id: clientId,
                 project_id: projectId
             };
@@ -206,6 +208,18 @@ export default function FamilyInputForm({ onBack }) {
                         className="mt-1 w-full border rounded-lg px-3 py-2"
                         value={classification}
                         onChange={(e) => setClassification(e.target.value)}
+                    />
+                </label>
+
+                {/* Diseño: Resistencia */}
+                <label className="block mb-4">
+                    <span className="text-gray-700 font-semibold">Resistencia de diseño (MPa)</span>
+                    <input
+                        type="number"
+                        step="0.1"
+                        className="mt-1 w-full border rounded-lg px-3 py-2"
+                        value={designResistance}
+                        onChange={(e) => setDesignResistance(e.target.value)}
                     />
                 </label>
 
