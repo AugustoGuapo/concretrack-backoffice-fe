@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Layout from "./components/Layout";
-import Login from "./components/login";
+import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import FamilyInputForm from "./components/FamilyInputForm";
 import ClientInputForm from "./components/ClientInputForm";
